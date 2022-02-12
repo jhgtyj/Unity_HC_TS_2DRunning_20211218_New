@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class LearnOperator : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float a = 10;
+    public float b = 3;
+
     private void Start()
     {
         #region 運算子 : 數學
@@ -20,7 +22,8 @@ public class LearnOperator : MonoBehaviour
         #endregion
 
 
-        運算子 : 比較
+        #region 運算子 : 比較
+        #endregion
 
         #region 運算子 : 邏輯
         // 比較後的結果為布林直 :  Lrue、false
@@ -41,9 +44,9 @@ public class LearnOperator : MonoBehaviour
         // 將布林直變相反
         print(!true); // false
         print(!false); // true
-        運算子 : 邏輯    
+        #endregion  
     }
 
-    
-   
+
+
 }
