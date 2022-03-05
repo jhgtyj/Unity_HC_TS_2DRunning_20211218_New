@@ -9,11 +9,27 @@ using UnityEngine.SceneManagement;
 public class SceneControl : MonoBehaviour
 {
     /// <summary>
+    /// 延遲載入場景
+    /// </summary>
+    public void DelayLoadScene()
+    {
+        // 使用MonoBehaviour 的 PAI 語法 :
+        // 方法名稱(對應引數);
+        Invoke("LoadScene", 1.5f);  // 延遲呼叫("方法名稱" ， 延遲秒數) - 延遲1.5秒呼叫 LoadScene
+    }
+    /// <summary>
     /// 載入場景
     /// </summary>
     private void LoadScene()
     {
         SceneManager.LoadScene("關卡 1");
+    }
+    /// <summary>
+    /// 延遲離開遊戲
+    /// </summary>
+    public void DelayQuitGame()
+    {
+        Invoke("QuitGame", 1.5f);
     }
 
     // Unity 按鈕與程式溝通方式
