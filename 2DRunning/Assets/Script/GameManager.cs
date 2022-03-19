@@ -119,8 +119,20 @@ public class GameManagr : MonoBehaviour
             Player.enabled = false;
 
             // 延遲重複呼叫("方法名稱"，延遲時間，間隔)
-            InvokeRrpeating("ShowFinal", 0, showFinalInterval);
+            InvokeRepeating("ShowFinal", 0, showFinalInterval);
         }
+    }
+
+    // 更換名稱快捷鍵 Ctrl + R R
+    /// <summary>
+    /// 變更血量並且更新介面
+    /// </summary>
+    /// <Param name="value">要變更的值</Param>
+    private void ChangHpAndUpdateUI(float value)
+    {
+        hp += value;
+        hp = Mathf.Clamp(hp, 0, hpMax);
+        imgHp.fillAmount = hp / hpMax;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
